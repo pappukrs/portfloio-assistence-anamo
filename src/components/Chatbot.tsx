@@ -27,7 +27,7 @@ export default function Chatbot() {
 
       // Start the conversation with your agent
       await conversation.startSession({
-        agentId: process.env.NEXT_PUBLIC_AGENT_ID, // Use the agent ID from .env
+        agentId: process.env.NEXT_PUBLIC_AGENT_ID || 'lRmVb9o3X9Y7f2pIcBxt', // Use the agent ID from .env or default
       });
 
     } catch (error) {
