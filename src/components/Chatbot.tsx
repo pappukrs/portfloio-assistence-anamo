@@ -7,6 +7,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+const agentId = process.env.NEXT_PUBLIC_AGENT_ID;
+console.log('Agent ID:', agentId);
+
 // Define the props and state types if needed
 
 export default function Chatbot() {
@@ -24,7 +27,7 @@ export default function Chatbot() {
 
       // Start the conversation with your agent
       await conversation.startSession({
-        agentId: process.env.AGENT_ID, // Use the agent ID from .env
+        agentId: process.env.NEXT_PUBLIC_AGENT_ID, // Use the agent ID from .env
       });
 
     } catch (error) {
