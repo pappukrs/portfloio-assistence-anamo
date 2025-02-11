@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@11labs/react": "^0.0.6",
+    "@react-three/drei": "^9.121.4",
+    "@react-three/fiber": "^9.0.0-alpha.8",
+    "@types/three": "^0.173.0",
     "anamo": "file:",
     "next": "15.1.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.173.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
