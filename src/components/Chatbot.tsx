@@ -3,13 +3,18 @@ import { Canvas } from '@react-three/fiber';
 import { MeshDistortMaterial, Sphere } from '@react-three/drei';
 import { useConversation } from '@11labs/react';
 import { useCallback } from 'react';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+// Define the props and state types if needed
 
 export default function Chatbot() {
   const conversation = useConversation({
     onConnect: () => console.log('Connected'),
     onDisconnect: () => console.log('Disconnected'),
-    onMessage: (message) => console.log('Message:', message),
-    onError: (error) => console.error('Error:', error),
+    onMessage: (message: string) => console.log('Message:', message),
+    onError: (error: Error) => console.error('Error:', error),
   });
 
   const startConversation = useCallback(async () => {
@@ -19,7 +24,7 @@ export default function Chatbot() {
 
       // Start the conversation with your agent
       await conversation.startSession({
-        agentId: 'YOUR_AGENT_ID', // Replace with your agent ID
+        agentId: process.env.AGENT_ID, // Use the agent ID from .env
       });
 
     } catch (error) {
